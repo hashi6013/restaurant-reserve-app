@@ -8,7 +8,7 @@
 <div class="mypage-wrapper">
     <div class="mypage-user">
         <h2 class="mypage-user__title">
-            例さん
+            例題子さん
             <!-- データーベースから持ってくる -->
         </h2>
     </div>
