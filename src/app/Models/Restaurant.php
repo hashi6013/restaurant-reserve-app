@@ -12,7 +12,6 @@ class Restaurant extends Model
     protected $fillable = [
         'area_id',
         'genre_id',
-        'owner_id',
         'restaurant_name',
         'restaurant_overview',
         'restaurant_image'
@@ -26,9 +25,9 @@ class Restaurant extends Model
         return $this->belongsTo('App\Models\Genre');
     }
 
-    public function owner() {
-        return $this->belongsTo('App\Models\Owner');
-    }
+    // public function owner() {
+        // return $this->belongsTo('App\Models\Owner');
+    // }
 
     public function favorites() {
         return $this->hasMany('App\Models\Favorite');
