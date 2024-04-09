@@ -25,38 +25,45 @@
     </div>
     <div class="search-form__button">
         <button class="search-form__button-submit" area-label="検索する">
-            <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
 </form>
 @endsection
 
 @section('content')
-<!-- 多分foreach文でまわす -->
-<div class="card-wrapper">
-    <div class="card">
-        <div class="card__img">
-            <!-- レイアウト確認のため記載、実際はデータベースから持ってくる -->
-            <img src="https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg" alt="" srcset="" width="180" height="120">
-        </div>
-        <div class="card__content">
-            <h2 class="card__content-title">
-                仙人
-            </h2>
-            <div class="card__content-tag">
-                <!-- レイアウト確認のため記載、実際はデータベースから持ってくる -->
-                <p class="card__content-tag-item">#東京都</p>
-                <p class="card__content-tag-item">寿司</p>
+
+<div class="cards">
+    <div class="cards-container">
+        @foreach($restaurants as $restaurant)
+        <article class="card">
+            <div class="card__img">
+                <img src="{{ asset('storage/'.$restaurant->restaurant_image)}}" width="240" height="160" alt="お店の画像" decoding="async">
             </div>
-            <div class="card__content-link">
-                <a href="card__content-link-item">
-                    詳しく見る
-                </a>
-                <i class="fa-regular fa-heart"></i>
+            <div class="card__content">
+                <h2 class="card__content-title">
+                    {{ $restaurant->restaurant_name }}
+                </h2>
+                <div class="card__content-tag">
+                    <p class="card__content-tag-item">
+                        #{{ $restaurant->area->prefecture }}
+                    </p>
+                    <p class="card__content-tag-item card__content-tag-item--genre">
+                        #{{$restaurant->genre->content }}
+                    </p>
+                </div>
+                <div class="card__content-link">
+                    <a class="card__content-link-item" href="">
+                        詳しく見る
+                    </a>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
             </div>
-        </div>
+        </article>
+        @endforeach
     </div>
 </div>
+
 
 
 @endsection
