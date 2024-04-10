@@ -22,6 +22,10 @@ class RestaurantController extends Controller
         $detail = Restaurant::find($id);
         return view('detail', compact('detail'));
     }
+    public function done()
+    {
+        return view('done');
+    }
     public function thanks()
     {
         return view('done');

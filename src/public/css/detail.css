@@ -1,0 +1,101 @@
+.detail-container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+}
+.restaurant-detail {
+    width: 90%;
+}
+.restaurant-detail__layout {
+    display: flex;
+    align-items: center;
+}
+.restaurant-detail__title {
+    margin-left: 10px;
+}
+.fa-chevron-left {
+    padding: 3px 6px;
+    text-decoration: none;
+    color: #000;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px #a4a4a4;
+}
+.restaurant-detail__img img {
+    width: 100%;
+    aspect-ratio: 3/2;
+}
+.restaurant-detail__tag {
+    margin-top: 10px;
+    /* line-height: 0.5; */
+}
+.restaurant-detail__tag-item {
+    display: inline-block;
+}
+.restaurant-detail__overview {
+    margin-top: -15px;
+}
+.reservation {
+    background-color: #305dff;
+    height: 80vh;
+    margin-top: -30px;
+    position: relative;
+    box-shadow: 3px 3px 2px #a4a4a4;
+    border-radius: 4px 4px 0 0;
+}
+.reservation-title,
+.reservation-input__content-term,
+.reservation-input__content-description {
+    color: #fff;
+}
+.reservation-container {
+    margin: 20px;
+    /* border: 1px solid red; */
+}
+.reservation__select-date {
+    display: block;
+    width: 30%;
+    height: 20px;
+    cursor: pointer;
+}
+.reservation__select-time,
+.reservation__select-number {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    height: 20px;
+    cursor: pointer;
+}
+.reservation-input__content {
+    background-color: #4d7fff;
+}
+.reservation-input__content-list {
+    padding: 20px;
+}
+.reservation-input__content-list-layout {
+    display: flex;
+}
+.reservation-input__content-term {
+    width: 20%;
+}
+.reservation-button__submit {
+    width: 100%;
+}
+.reservation-button__submit {
+    position: absolute;
+    top: 100%;
+    padding: 10px 0;
+    color: #fff;
+    background-color: #0538ff;
+    border: none;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 3px 3px 2px #a4a4a4;
+}
+.reservation-button__submit:hover {
+    background-color: #fff;
+    color: #0538ff;
+    cursor: pointer;
+}
