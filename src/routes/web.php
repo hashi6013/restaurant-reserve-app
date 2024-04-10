@@ -16,4 +16,5 @@ use App\Http\Controllers\RestaurantController;
 
 
 Route::get('/', [RestaurantController::class, 'index']);
-Route::get('/done', [RestaurantController::class, 'thanks']);
+Route::get('/detail/{shop_id}', [RestaurantController::class, 'detail']);
+Route::get('/done', [RestaurantController::class, 'done']);

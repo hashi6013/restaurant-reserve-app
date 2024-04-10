@@ -17,6 +17,15 @@ class RestaurantController extends Controller
         $areas = Area::all();
         return view('index', compact('restaurants', 'genres', 'areas'));
     }
+    public function detail($id)
+    {
+        $detail = Restaurant::find($id);
+        return view('detail', compact('detail'));
+    }
+    public function done()
+    {
+        return view('done');
+    }
     public function thanks()
     {
         return view('done');

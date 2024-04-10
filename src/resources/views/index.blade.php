@@ -53,7 +53,7 @@
                     </p>
                 </div>
                 <div class="card__content-link">
-                    <a class="card__content-link-item" href="">
+                    <a class="card__content-link-item" href="/detail/{{$restaurant->id}}">
                         詳しく見る
                     </a>
                     <i class="fa-solid fa-heart"></i>
