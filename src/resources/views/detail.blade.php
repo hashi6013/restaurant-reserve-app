@@ -34,6 +34,7 @@
             </div>
         </div>
         <form class="reservation" action="">
+            @csrf
             <div class="reservation-container">
                 <h3 class="reservation-title">予約</h3>
                 <input class="reservation__select-date" type="date" id="date_input" oninput="updateDate()">
