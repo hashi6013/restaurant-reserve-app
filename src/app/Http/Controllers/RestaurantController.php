@@ -28,6 +28,6 @@ class RestaurantController extends Controller
     }
     public function thanks()
     {
-        return view('done');
+        return view('thanks');
     }
 }
