@@ -45,6 +45,7 @@
     position: relative;
     box-shadow: 3px 3px 2px #a4a4a4;
     border-radius: 4px 4px 0 0;
+    z-index: 1;
 }
 .reservation-title,
 .reservation-input__content-term,
@@ -98,4 +99,30 @@
     background-color: #fff;
     color: #0538ff;
     cursor: pointer;
+}
+.alert {
+    background-color: #fff;
+    height: 80vh;
+    margin-top: -30px;
+    position: relative;
+    box-shadow: 3px 3px 2px #a4a4a4;
+    border-radius: 4px 4px 0 0;
+}
+.alert-container {
+    padding: 100px;
+    text-align: center;
+}
+.alert__content-text {
+    font-size: 20px;
+}
+.alert__content-item {
+    margin-top: 60px;
+}
+.alert__content-item-link {
+    text-decoration: none;
+    background-color: #305dff;
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: #fff;
+    z-index: 1;
 }

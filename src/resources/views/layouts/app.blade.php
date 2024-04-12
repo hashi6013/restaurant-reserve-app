@@ -10,18 +10,51 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__inner">
-            <div class="header__menu">
-                <i class="fa-solid fa-bars"></i>
-                <a class="header__logo" href="/">Rese</a>
+        <div class="header-container">
+            <div class="header__inner">
+                <button type="button" class="hamburger">
+                    <span></span>
+                </button>
+                <a class="header__logo" href="/">Rese</a></a>
             </div>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__item-link" href="/">Home</a></li>
+                    @if(Auth::check())
+                    <li class="nav__item">
+                        <form class="logout-form" action="/logout" method="post">
+                            @csrf
+                            <button class="nav__item-link nav__item-link--button">Logout</button>
+                        </form>
+                    </li>
+                    <li class="nav__item"><a class="nav__item-link" href="">Mypage</a></li>
+                    @else
+                    <li class="nav__item"><a class="nav__item-link" href="/register">Registration</a></li>
+                    <li class="nav__item"><a class="nav__item-link" href="/login">Login</a></li>
+                    @endif
+                </ul>
+            </nav>
             @yield('search')
         </div>
     </header>
+
+
 
     <main>
         @yield('content')
         <script src="https://kit.fontawesome.com/281a1830c2.js" crossorigin="anonymous"></script>
     </main>
+<script>
+{
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
+  hamburger.addEventListener('click', function() {
+   //処理内容
+    hamburger.classList.toggle("open");
+    nav.classList.toggle('open');
+  });
+}
+</script>
+
 </body>
 </html>

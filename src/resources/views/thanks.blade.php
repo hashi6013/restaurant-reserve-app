@@ -10,7 +10,7 @@
         <div class="register-thanks__heading">
             <h2 class="register-thanks__heading-title">会員登録ありがとうございます</h2>
             <div class="register-thanks__link">
-                <a class="register-thanks__link-item" href="#">ログインする</a>
+                <a class="register-thanks__link-item" href="/">ホームへ</a>
             </div>
         </div>
     </div>
