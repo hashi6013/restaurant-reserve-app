@@ -7,24 +7,110 @@ h2 {
 p {
     font-size: 14px;
 }
-.header__inner {
+
+.header-container {
     max-width: 1230px;
     margin: 0 auto;
     padding: 20px 50px;
     display: flex;
     justify-content: space-between;
 }
-.fa-bars {
-    padding: 5px;
-    color: #fff;
-    border-radius: 4px;
-    background-color: #305dff;
-    filter: drop-shadow(3px 3px 2px #a4a4a4);
-}
+
 .header__logo {
+    margin-left: 10px;
     color: #305dff;
     font-size: 24px;
     font-weight: bold;
     text-decoration: none;
-    vertical-align: middle;
+    vertical-align: top;
 }
+
+.hamburger {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    appearance: none;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: #305dff;
+    cursor: pointer;
+    box-shadow: 3px 3px 2px #a4a4a4;
+    border-radius: 4px;
+    z-index: 5;
+}
+.hamburger span,
+.hamburger span::after,
+.hamburger span::before {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 18px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: absolute;
+}
+.hamburger span {
+    left: 6px;
+}
+.hamburger span::before {
+    top: -8px;
+}
+
+.hamburger span::after {
+    bottom: -8px;
+}
+.hamburger.open span {
+    background-color: transparent;
+}
+
+.hamburger.open span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.hamburger.open span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+.nav {
+    display: block;
+    position: fixed;
+    background-color: #fff;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 4;
+    transition: all 0.5s;
+    right: -300%;
+}
+.nav__list {
+    padding-top: 100px;
+}
+
+.nav__item-link {
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+    width: 120px;
+    margin: 30px auto 0;
+
+    /* padding-top: 50px; */
+        font-size: 20px;
+        color: #305dff;
+        /* color: #fff; */
+    text-decoration: none;
+        /* padding: 20px 0 20px 50px; */
+}
+.nav.open {
+    right: 0;
+}
+
+.nav__item-link--button {
+    display: block;
+    margin: 30px auto 0;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+
