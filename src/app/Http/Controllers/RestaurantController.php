@@ -30,4 +30,8 @@ class RestaurantController extends Controller
     {
         return view('thanks');
     }
+    public function mypage()
+    {
+        return view('mypage');
+    }
 }

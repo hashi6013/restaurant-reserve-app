@@ -1,0 +1,117 @@
+.mypage-container {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 70px;
+    display: grid;
+    /* grid-template-rows: 100px 300px; */
+    grid-template-columns: 2fr 3fr;
+    column-gap: 40px;
+}
+.mypage__name {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+.mypage__reservation {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+.mypage__reservation-card {
+    background-color: #305dff;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px #a4a4a4;
+    padding-bottom: 10px;
+}
+.card-container {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.mypage__reservation-card-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mypage__reservation-card-title {
+    margin-right: 150px;
+    color: #fff;
+}
+.fa-clock {
+    color: #fff;
+}
+.mypage__reservation-card-button-delete {
+    border: none;
+    background-color: #305dff;
+    color: #fff;
+    cursor: pointer;
+}
+.mypage__reservation-card-button-delete:hover {
+    color: #ff0c06;
+}
+.card-content {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.card-content__list-layout{
+    display: flex;
+    margin-top: 10px;
+}
+.card-content__list-term {
+    width: 20%;
+    color: #fff;
+}
+.card-content__list-description {
+    color: #fff;
+}
+
+.card {
+    width: 240px;
+    /* width: 260px; */
+    /* width: 100%; */
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px #a4a4a4;
+}
+
+.card__img img {
+    /* width: 100%; */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.card__content {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-bottom: 15px;
+}
+
+.card__content-title {
+    margin-top: 8px;
+    margin-bottom: -10px;
+}
+
+.card__content-tag-item {
+    display: inline-block;
+    /* border: 1px solid red; */
+}
+
+.card__content-link {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__content-link-item {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #305dff;
+    border-radius: 4px;
+}
+
+.fa-heart {
+    font-size: 30px;
+    color: #eeeeee;
+    vertical-align: middle;
+}
