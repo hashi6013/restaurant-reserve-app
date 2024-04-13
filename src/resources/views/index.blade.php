@@ -54,7 +54,7 @@
                 </div>
                 <div class="card__content-link">
                     <a class="card__content-link-item" href="/detail/{{$restaurant->id}}">
-                        詳しく見る
+                        詳しくみる
                     </a>
                     <i class="fa-solid fa-heart"></i>
                 </div>

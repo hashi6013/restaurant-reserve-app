@@ -27,7 +27,7 @@
                             <button class="nav__item-link nav__item-link--button">Logout</button>
                         </form>
                     </li>
-                    <li class="nav__item"><a class="nav__item-link" href="">Mypage</a></li>
+                    <li class="nav__item"><a class="nav__item-link" href="/mypage">Mypage</a></li>
                     @else
                     <li class="nav__item"><a class="nav__item-link" href="/register">Registration</a></li>
                     <li class="nav__item"><a class="nav__item-link" href="/login">Login</a></li>
