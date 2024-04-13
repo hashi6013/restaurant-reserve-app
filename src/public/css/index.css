@@ -94,6 +94,10 @@
     font-size: 30px;
     color: #eeeeee;
     vertical-align: middle;
+    cursor: pointer;
+}
+.fa-heart:hover {
+    color: #f86aaa;
 }
 
 
