@@ -6,25 +6,31 @@
 
 @section('search')
 
-<form class="search-form" action="">
+<form class="search-form" action="/search" method="get">
     @csrf
     <div class="search-form__group">
         <div class="search-form__select-container">
-            <select class="search-form__select" name="" id="">
-                <option value="">All areas</option>
+            <select class="search-form__select" name="area_id" id="" value="{{request('area')}}">
+                <option hidden value="">All areas</option>
+                @foreach ($areas as $area)
+                <option value="{{$area['id']}}" @if(request('area_id')==$area->id) selected @endif>{{$area['prefecture']}}</>
+                @endforeach
             </select>
         </div>
         <div class="search-form__select-container">
-            <select class="search-form__select" name="" id="">
-                <option value="">All genres</option>
+            <select class="search-form__select" name="genre_id" value="{{request('genre')}}">
+                <option hidden value="">All genres</option>
+                @foreach ($genres as $genre)
+                <option value="{{$genre['id']}}" @if(request('genre_id')==$genre->id) selected @endif>{{$genre['content']}}</option>
+                @endforeach
             </select>
         </div>
         <label>
-            <input class="search-form__input" type="text" placeholder="Search ...">
+            <input class="search-form__input" type="text" name="keyword" value="{{request('keyword')}}" placeholder="Search ...">
         </label>
     </div>
     <div class="search-form__button">
-        <button class="search-form__button-submit" area-label="検索する">
+        <button class="search-form__button-submit" type="submit" area-label="検索する">
         <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
