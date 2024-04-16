@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,11 @@ use App\Http\Controllers\RestaurantController;
 
 Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
+Route::post('/done', [RestaurantController::class, 'store']);
 Route::get('/detail/{shop_id}', [RestaurantController::class, 'detail']);
 Route::get('/done', [RestaurantController::class, 'done']);
 Route::get('/thanks', [RestaurantController::class, 'thanks']);
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [RestaurantController::class, 'mypage']);
 });
+

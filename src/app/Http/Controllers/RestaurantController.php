@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Restaurant;
 use App\Models\Genre;
 use App\Models\Area;
+use App\Models\Favorite;
 
 
 class RestaurantController extends Controller

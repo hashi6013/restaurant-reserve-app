@@ -34,7 +34,7 @@
             </div>
         </div>
         @if(Auth::check())
-        <form class="reservation" action="">
+        <form class="reservation" action="/done" method="post">
             @csrf
             <div class="reservation-container">
                 <h3 class="reservation-title">予約</h3>
