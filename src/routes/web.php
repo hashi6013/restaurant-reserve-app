@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
-use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +20,6 @@ Route::get('/search', [RestaurantController::class, 'search']);
 Route::get('/detail/{shop_id}', [RestaurantController::class, 'detail']);
 Route::get('/done', [RestaurantController::class, 'done']);
 Route::get('/thanks', [RestaurantController::class, 'thanks']);
-Route::get('/mypage', [RestaurantController::class, 'mypage']);
+Route::middleware('auth')->group(function () {
+    Route::get('/mypage', [RestaurantController::class, 'mypage']);
+});
