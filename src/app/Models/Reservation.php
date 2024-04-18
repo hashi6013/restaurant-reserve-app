@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 class Reservation extends Model
 {
     use HasFactory;
@@ -24,4 +23,7 @@ class Reservation extends Model
     public function restaurant() {
         return $this->belongsTo('App\Models\Restaurant');
     }
+    // public function restaurants() {
+        // return $this->hasMany('App\Models\Restaurant');
+    // }
 }

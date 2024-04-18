@@ -4,21 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Restaurant;
+use App\Models\Reservation;
 use App\Models\Genre;
 use App\Models\Area;
 use App\Models\Favorite;
-
+use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
 {
-    public function index()
+    public function index(Favorite $favorite)
     {
         $restaurants = Restaurant::with('genre', 'area')->get();
         $genres = Genre::all();
         $areas = Area::all();
         return view('index', compact('restaurants', 'genres', 'areas'));
     }
-    public function search(Request $request) {
+    
+    public function search(Request $request)
+    {
         $query = Restaurant::query();
 
         $query = $this->getSearchQuery($request, $query);
@@ -31,24 +34,17 @@ class RestaurantController extends Controller
         // $areas = Area::all();
         return view('index', compact('areas', 'genres', 'restaurants'));
     }
-
-
     public function detail($id)
     {
         $detail = Restaurant::find($id);
         return view('detail', compact('detail'));
     }
-    public function done()
-    {
-        return view('done');
-    }
-    public function thanks()
-    {
-        return view('thanks');
-    }
     public function mypage()
     {
-        return view('mypage');
+        $users = Auth::user();
+        $profiles = Reservation::with('restaurant')->get();
+        $favorites = Favorite::with('restaurant')->get();
+        return view('mypage', compact('users', 'profiles', 'favorites'));
     }
 
     private function getSearchQuery($request, $query)

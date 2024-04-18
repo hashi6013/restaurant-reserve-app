@@ -62,7 +62,18 @@
                     <a class="card__content-link-item" href="/detail/{{$restaurant->id}}">
                         詳しくみる
                     </a>
-                    <i class="fa-solid fa-heart"></i>
+                    @if(Auth::check())
+                    @if($restaurant->favorite_by_auth_user())
+                    <a href="{{ route('restaurant.unlike', ['id' => $restaurant->id]) }}">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                    @else
+                    <a href="{{ route('restaurant.favorite', ['id' => $restaurant->id]) }}" class="favorite">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                    @endif
+                    
+                    @endif
                 </div>
             </div>
         </article>

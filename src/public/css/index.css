@@ -92,12 +92,17 @@
 }
 .fa-heart {
     font-size: 30px;
-    color: #eeeeee;
+    color: #ff0000;
     vertical-align: middle;
     cursor: pointer;
 }
 .fa-heart:hover {
-    color: #f86aaa;
+    color: #f7c9d1;
 }
+
+.favorite i {
+    color: #eeeeee;
+}
+
 
 

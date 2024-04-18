@@ -38,8 +38,9 @@
             @csrf
             <div class="reservation-container">
                 <h3 class="reservation-title">予約</h3>
-                <input class="reservation__select-date" type="date" id="date_input" oninput="updateDate()">
-                <select class="reservation__select-time" id="timeSelect">
+                <input type="hidden" name="restaurant_id" value="{{$detail['id']}}">
+                <input class="reservation__select-date" type="date" name="reserve_date" id="date_input" oninput="updateDate()">
+                <select class="reservation__select-time" id="timeSelect" name="reserve_time">
                     <option hidden value="null">時間を選択してください</option>
                     <option value="10:00">10:00</option>
                     <option value="10:30">10:30</option>
@@ -64,7 +65,7 @@
                     <option value="20:00">20:00</option>
                     <option value="20:30">20:30</option>
                 </select>
-                <select class="reservation__select-number" id="numberSelect">
+                <select class="reservation__select-number" id="numberSelect" name="reserve_number">
                     <option hidden value="null">人数を選択してください</option>
                     <option value="1">1人</option>
                     <option value="2">2人</option>
@@ -104,7 +105,7 @@
                 </div>
             </div>
             <div class="reservation-button">
-                    <button class="reservation-button__submit">予約する</button>
+                    <button class="reservation-button__submit" type="submit">予約する</button>
             </div>
         </form>
         @else
@@ -116,9 +117,7 @@
                 <div class="alert__content-item">
                     <a class="alert__content-item-link" href="/login">ログインする</a>
                 </div>
-
             </div>
-            
         </div>
         @endif
     </div>

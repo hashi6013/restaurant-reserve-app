@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\FavoriteController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +18,14 @@ use App\Http\Controllers\FavoriteController;
 
 Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
-Route::post('/done', [RestaurantController::class, 'store']);
+Route::post('/done', [ReservationController::class, 'store']);
 Route::get('/detail/{shop_id}', [RestaurantController::class, 'detail']);
 Route::get('/done', [RestaurantController::class, 'done']);
-Route::get('/thanks', [RestaurantController::class, 'thanks']);
+Route::get('/thanks', [AuthController::class, 'thanks']);
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [RestaurantController::class, 'mypage']);
 });
+Route::get('/restaurant/favorite/{id}', [FavoriteController::class, 'favorite'])->name('restaurant.favorite');
+Route::get('/restaurant/unlike/{id}', [FavoriteController::class, 'unlike'])->name('restaurant.unlike');
+
 
