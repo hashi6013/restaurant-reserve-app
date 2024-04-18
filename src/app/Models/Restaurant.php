@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Restaurant extends Model
 {
@@ -35,5 +36,24 @@ class Restaurant extends Model
 
     public function reservations() {
         return $this->hasMany('App\Models\Reservation');
+    }
+    // public function reservation() {
+        // return $this->belongsTo('App\Models\Reservation');
+    // }
+
+    public function favorite_by_auth_user()
+    {
+        $id = Auth::id();
+
+        $checkers = array();
+        foreach($this->favorites as $favorite) {
+            array_push($checkers, $favorite->user_id);
+        }
+        if (in_array($id, $checkers)) {
+            return true;
+        }else {
+            return false;
+        }
+        
     }
 }
