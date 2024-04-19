@@ -27,5 +27,6 @@ Route::middleware('auth')->group(function () {
 });
 Route::get('/restaurant/favorite/{id}', [FavoriteController::class, 'favorite'])->name('restaurant.favorite');
 Route::get('/restaurant/unlike/{id}', [FavoriteController::class, 'unlike'])->name('restaurant.unlike');
+Route::delete('/mypage/delete', [ReservationController::class, 'destroy']);
 
 
