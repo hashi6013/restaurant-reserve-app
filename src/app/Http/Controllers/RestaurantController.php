@@ -42,10 +42,11 @@ class RestaurantController extends Controller
     public function mypage()
     {
         $users = Auth::user();
-        $profiles = Reservation::with('restaurant')->get();
-        $favorites = Favorite::with('restaurant')->get();
+        $profiles = Reservation::where('user_id',  '=', Auth::user()->id)->get();
+        $favorites = Favorite::where('user_id', '=', Auth::user()->id)->get();
         return view('mypage', compact('users', 'profiles', 'favorites'));
     }
+   
 
     private function getSearchQuery($request, $query)
     {

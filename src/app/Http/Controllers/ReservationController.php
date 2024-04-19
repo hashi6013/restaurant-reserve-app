@@ -16,15 +16,19 @@ class ReservationController extends Controller
     {
         $user = Auth::user();
         $restaurants = Restaurant::find($request->restaurant_id);
-        // $reservations = $request->only(['reserve_date', 'reserve_time', 'reserve_number']);
-        // dd($reservations, $user, $restaurants);
-        // Reservation::create([$reservations, 'user_id' => $user->id]);
-        // dd($users);
         $request['user_id'] = $user->id;
         Reservation::create($request->only([
             'reserve_date', 'reserve_time', 'reserve_number', 'restaurant_id', 'user_id'
         ]));
         return view('done');
     }
+    public function destroy(Request $request)
+    {
+
+        // Reservation::find('id',  '=', $request->id)->delete();
+        Reservation::find($request->id)->delete();
+        return redirect('mypage');
+    }
+    
     
 }
