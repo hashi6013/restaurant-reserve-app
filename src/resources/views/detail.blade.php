@@ -40,6 +40,11 @@
                 <h3 class="reservation-title">予約</h3>
                 <input type="hidden" name="restaurant_id" value="{{$detail['id']}}">
                 <input class="reservation__select-date" type="date" name="reserve_date" id="date_input" oninput="updateDate()">
+                <div class="form__error">
+                    @error('reserve_date')
+                    {{$message}}
+                    @enderror
+                </div>
                 <select class="reservation__select-time" id="timeSelect" name="reserve_time">
                     <option hidden value="null">時間を選択してください</option>
                     <option value="10:00">10:00</option>
@@ -65,6 +70,11 @@
                     <option value="20:00">20:00</option>
                     <option value="20:30">20:30</option>
                 </select>
+                <div class="form__error">
+                    @error('reserve_time')
+                    {{$message}}
+                    @enderror
+                </div>
                 <select class="reservation__select-number" id="numberSelect" name="reserve_number">
                     <option hidden value="null">人数を選択してください</option>
                     <option value="1">1人</option>
@@ -78,6 +88,11 @@
                     <option value="9">9人</option>
                     <option value="10">10人</option>
                 </select>
+                <div class="form__error">
+                    @error('reserve_number')
+                    {{$message}}
+                    @enderror
+                </div>
                 <div class="reservation-input__content">
                     <dl class="reservation-input__content-list">
                         <div class="reservation-input__content-list-layout">
