@@ -34,7 +34,7 @@ class ReservationRequest extends FormRequest
     {
         return [
             'reserve_date.required' => '日付を選択してください',
-            'reserve_date.after' => '本日以降の日付を選択してください。',
+            'reserve_date.after' => '本日以降の日付を選択してください',
             'reserve_time.prohibited_if' => '予約時間を選択してください',
             'reserve_number.prohibited_if' => '予約人数を選択してください'
         ];
