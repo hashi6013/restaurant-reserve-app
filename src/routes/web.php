@@ -18,9 +18,8 @@ use App\Http\Controllers\FavoriteController;
 
 Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
-Route::post('/done', [ReservationController::class, 'store']);
 Route::get('/detail/{shop_id}', [RestaurantController::class, 'detail']);
-Route::get('/done', [RestaurantController::class, 'done']);
+Route::post('/done', [ReservationController::class, 'store']);
 Route::get('/thanks', [AuthController::class, 'thanks']);
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [RestaurantController::class, 'mypage']);

@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReservationRequest;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
 use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 
-
-
-
 class ReservationController extends Controller
 {
-    public function store(Request $request)
+    public function store(ReservationRequest $request)
     {
         $user = Auth::user();
         $restaurants = Restaurant::find($request->restaurant_id);
