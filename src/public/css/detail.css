@@ -30,7 +30,6 @@
 }
 .restaurant-detail__tag {
     margin-top: 10px;
-    /* line-height: 0.5; */
 }
 .restaurant-detail__tag-item {
     display: inline-block;
@@ -56,9 +55,10 @@
     margin: 20px;
     /* border: 1px solid red; */
 }
+
 .reservation__select-date {
     display: block;
-    width: 30%;
+    width: 200px;
     height: 20px;
     cursor: pointer;
 }
@@ -80,7 +80,11 @@
     display: flex;
 }
 .reservation-input__content-term {
-    width: 20%;
+    width: 30%;
+    font-size: clamp(12px, 1.3vw, 20px);
+}
+.reservation-input__content-description {
+    font-size: clamp(12px, 1.3vw, 20px);
 }
 .reservation-button__submit {
     width: 100%;
@@ -103,13 +107,14 @@
 .alert {
     background-color: #fff;
     height: 80vh;
-    margin-top: -30px;
+    /* height: 400px; */
+    /* margin-top: -30px; */
     position: relative;
     box-shadow: 3px 3px 2px #a4a4a4;
     border-radius: 4px 4px 0 0;
 }
 .alert-container {
-    padding: 100px;
+    padding: 100px 4% 0;
     text-align: center;
 }
 .alert__content-text {
@@ -128,4 +133,31 @@
 }
 .form__error {
     color: #ff0000;
+}
+
+@media screen and (max-width: 660px) {
+    .detail-container {
+        display: block;
+    }
+    .restaurant-detail {
+        width: 100%;
+    }
+    .reservation {
+        margin-top: 50px;
+    }
+    .reservation-title {
+        padding-top: 10px;
+    }
+    .alert {
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .alert__content-text {
+        color: #ff0000;
+    }
+}
+@media screen and (max-width: 480px) {
+    .reservation__select-date {
+        width: 100%;
+    }
 }

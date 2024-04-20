@@ -43,7 +43,7 @@
                         <div class="status__list-layout">
                             <dt class="status__list-term">Time</dt>
                             <dd class="status__list-description">
-                                {{$profile->reserve_time}}
+                                {{ substr($profile->reserve_time, 0, 5) }}
                             </dd>
                         </div>
                         <div class="status__list-layout">
@@ -56,10 +56,11 @@
                 </div>
                 @endforeach
             </section>
+            
             <section class="favorite">
                 <h3>お気に入り店舗</h3>
                 <div class="favorite-container">
-                   @foreach ($favorites as $favorite)
+                @foreach ($favorites as $favorite)
                     <article class="card">
                         <div class="card__img">
                             <img src="{{asset('storage/'.$favorite->restaurant->restaurant_image)}}" width="240" height="120" alt="お店の画像" decoding="async">
