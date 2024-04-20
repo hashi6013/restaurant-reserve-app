@@ -31,7 +31,7 @@
     </div>
     <div class="search-form__button">
         <button class="search-form__button-submit" type="submit" area-label="検索する">
-        <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-magnifying-glass"></i>
         </button>
     </div>
 </form>
