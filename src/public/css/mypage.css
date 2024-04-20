@@ -8,6 +8,7 @@
 }
 .status {
     width: 40%;
+    height: 240px;
 }
 .mypage-layout {
     display: flex;
@@ -15,10 +16,11 @@
 }
 .status-container {
     background-color: #305dff;
+    padding-bottom: 5px;
     border-radius: 4px;
     box-shadow: 3px 3px 2px #a4a4a4;
-    height: 240px;
     margin-bottom: 10px;
+    
 }
 .status__flex {
     display: flex;
@@ -28,14 +30,16 @@
     margin-right: 10px;
 }
 .status__number {
-    margin-right: 150px;
+    margin-right: 50px;
     color: #fff;
+    font-size: clamp(12px, 1.1vw, 18px);
 }
 .status__delete {
     border: none;
     background-color: #305dff;
     color: #fff;
     cursor: pointer;
+    font-size: clamp(12px, 1.1vw, 18px);
 }
 
 .status__delete:hover {
@@ -48,12 +52,14 @@
 }
 
 .status__list-term {
-    width: 20%;
+    width: 30%;
     color: #fff;
+    font-size: clamp(12px, 1.1vw, 18px);
 }
 
 .status__list-description {
     color: #fff;
+    font-size: clamp(12px, 1.1vw, 18px);
 }
 
 .status__list-layout:not(:first-of-type) {
@@ -66,12 +72,16 @@
 }
 .fa-clock {
     color: #fff;
+    font-size: clamp(12px, 1.1vw, 18px);
+}
+.favorite {
+    width: 100%;
 }
 .favorite-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 40px;
-    row-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    column-gap: 10px;
+    row-gap: 10px;
 }
 .card {
     background-color: #fff;
@@ -80,6 +90,7 @@
     box-shadow: 3px 3px 2px #a4a4a4;
 }
 .card__img img {
+    width: 100%;
     border-radius: 4px 4px 0 0;
 }
 .card__content {
@@ -109,4 +120,42 @@
     color: #ff0000;
     vertical-align: middle;
     cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+    .mypage-layout {
+        padding: 0 4%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .status {
+        width: 100%;
+    }
+    .favorite-container {
+        display: block;
+    }
+    .card {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .mypage-container {
+        padding: 0;
+    }
+}
+@media screen and (max-width: 480px) {
+    .card__content-name {
+        font-size: clamp(14px, 1.3vw, 20px);
+    }
+    .card__content-tag-item,
+    .card__content-link-layout,
+    .card__content-link-item {
+        font-size: clamp(12px, 1.1vw, 18px);
+    }
+    .status__list-layout {
+        display: block;
+    }
+    .status__list-term {
+        width: 100%;
+    }
 }

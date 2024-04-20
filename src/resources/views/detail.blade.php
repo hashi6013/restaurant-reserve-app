@@ -127,7 +127,7 @@
         <div class="alert">
             <div class="alert-container">
                 <div class="alert__content">
-                    <p class="alert__content-text">予約にはログインが必要です。</p>
+                    <p class="alert__content-text">予約にはログインが必要です</p>
                 </div>
                 <div class="alert__content-item">
                     <a class="alert__content-item-link" href="/login">ログインする</a>
