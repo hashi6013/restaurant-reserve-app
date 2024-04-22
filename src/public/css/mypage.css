@@ -3,25 +3,29 @@
     margin: 0 auto 10px;
     padding: 0 70px;
 }
+
 .mypage__name {
     text-align: center;
 }
+
 .status {
     width: 40%;
     height: 240px;
 }
+
 .mypage-layout {
     display: flex;
     column-gap: 40px;
 }
+
 .status-container {
     background-color: #305dff;
     padding-bottom: 5px;
     border-radius: 4px;
     box-shadow: 3px 3px 2px #a4a4a4;
     margin-bottom: 10px;
-    
 }
+
 .status__flex {
     display: flex;
     justify-content: space-between;
@@ -29,11 +33,13 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
 .status__number {
     margin-right: 50px;
     color: #fff;
     font-size: clamp(12px, 1.1vw, 18px);
 }
+
 .status__delete {
     border: none;
     background-color: #305dff;
@@ -70,49 +76,58 @@
     display: flex;
     justify-content: space-between;
 }
+
 .fa-clock {
     color: #fff;
     font-size: clamp(12px, 1.1vw, 18px);
 }
+
 .favorite {
     width: 100%;
 }
+
 .favorite-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     column-gap: 10px;
     row-gap: 10px;
 }
+
 .card {
     background-color: #fff;
     height: 240px;
     border-radius: 4px;
     box-shadow: 3px 3px 2px #a4a4a4;
 }
+
 .card__img img {
     width: 100%;
     border-radius: 4px 4px 0 0;
 }
+
 .card__content {
     margin: -10px 10px 0 10px;
 }
+
 .card__content-name {
     font-size: 18px;
 }
+
 .card__content-tag {
     display: flex;
 }
+
 .card__content-tag-item {
     line-height: 0.5;
     margin-top: -10px;
 }
+
 .card__content-link-item {
     padding: 3px 10px;
     text-decoration: none;
     color: #fff;
     background-color: #305dff;
     border-radius: 4px;
-
 }
 
 .fa-heart {
@@ -121,6 +136,30 @@
     vertical-align: middle;
     cursor: pointer;
 }
+
+.reservation__alert--success {
+    background-color: #d1e7de;
+    color: #000;
+    padding: 0 4%;
+}
+
+.edit-link {
+    text-align: right;
+    margin-top: 5px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.edit-link__item {
+    padding: 0 5px;
+    background-color: #fff;
+    text-decoration: none;
+    color: #305dff;
+    border-radius: 4px;
+    font-size: clamp(12px, 1.1vw, 18px);
+    cursor: pointer;
+}
+
 @media screen and (max-width: 900px) {
     .mypage-layout {
         padding: 0 4%;
@@ -143,6 +182,7 @@
         padding: 0;
     }
 }
+
 @media screen and (max-width: 480px) {
     .card__content-name {
         font-size: clamp(14px, 1.3vw, 20px);

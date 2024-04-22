@@ -23,22 +23,19 @@ class RestaurantController extends Controller
     public function search(Request $request)
     {
         $query = Restaurant::query();
-
         $query = $this->getSearchQuery($request, $query);
-
         $restaurants = $query->get();
-
         $areas = Area::all();
-
         $genres =Genre::all();
-        // $areas = Area::all();
         return view('index', compact('areas', 'genres', 'restaurants'));
     }
+
     public function detail($id)
     {
         $detail = Restaurant::find($id);
         return view('detail', compact('detail'));
     }
+
     public function mypage()
     {
         $users = Auth::user();
@@ -46,8 +43,7 @@ class RestaurantController extends Controller
         $favorites = Favorite::where('user_id', '=', Auth::user()->id)->get();
         return view('mypage', compact('users', 'profiles', 'favorites'));
     }
-   
-
+    
     private function getSearchQuery($request, $query)
     {
         if(!empty($request->keyword)) {

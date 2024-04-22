@@ -10,6 +10,13 @@
         <h2 class="mypage__name">
             {{$users->name}}さん
         </h2>
+        <div class="reservation__alert">
+            @if(session('message'))
+            <div class="reservation__alert--success">
+                {{ session('message') }}
+            </div>
+            @endif
+        </div>
         <div class="mypage-layout">
             <section class="status">
                 <h3 class="status__title">予約状況</h3>
@@ -52,11 +59,13 @@
                                 {{$profile->reserve_number}}人
                             </dd>
                         </div>
+                        <div class="edit-link">
+                            <a class="edit-link__item" href="/mypage/edit?id={{$profile->id}}">予約の変更</a>
+                        </div>
                     </dl>
                 </div>
                 @endforeach
             </section>
-            
             <section class="favorite">
                 <h3>お気に入り店舗</h3>
                 <div class="favorite-container">

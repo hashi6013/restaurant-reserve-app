@@ -6,16 +6,20 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
 }
+
 .restaurant-detail {
     width: 90%;
 }
+
 .restaurant-detail__layout {
     display: flex;
     align-items: center;
 }
+
 .restaurant-detail__title {
     margin-left: 10px;
 }
+
 .fa-chevron-left {
     padding: 3px 6px;
     text-decoration: none;
@@ -24,19 +28,24 @@
     border-radius: 4px;
     box-shadow: 3px 3px 2px #a4a4a4;
 }
+
 .restaurant-detail__img img {
     width: 100%;
     aspect-ratio: 3/2;
 }
+
 .restaurant-detail__tag {
     margin-top: 10px;
 }
+
 .restaurant-detail__tag-item {
     display: inline-block;
 }
+
 .restaurant-detail__overview {
     margin-top: -15px;
 }
+
 .reservation {
     background-color: #305dff;
     height: 80vh;
@@ -46,14 +55,15 @@
     border-radius: 4px 4px 0 0;
     z-index: 1;
 }
+
 .reservation-title,
 .reservation-input__content-term,
 .reservation-input__content-description {
     color: #fff;
 }
+
 .reservation-container {
     margin: 20px;
-    /* border: 1px solid red; */
 }
 
 .reservation__select-date {
@@ -62,6 +72,7 @@
     height: 20px;
     cursor: pointer;
 }
+
 .reservation__select-time,
 .reservation__select-number {
     display: block;
@@ -70,25 +81,32 @@
     height: 20px;
     cursor: pointer;
 }
+
 .reservation-input__content {
     background-color: #4d7fff;
 }
+
 .reservation-input__content-list {
     padding: 20px;
 }
+
 .reservation-input__content-list-layout {
     display: flex;
 }
+
 .reservation-input__content-term {
     width: 30%;
     font-size: clamp(12px, 1.3vw, 20px);
 }
+
 .reservation-input__content-description {
     font-size: clamp(12px, 1.3vw, 20px);
 }
+
 .reservation-button__submit {
     width: 100%;
 }
+
 .reservation-button__submit {
     position: absolute;
     top: 100%;
@@ -99,30 +117,34 @@
     border-radius: 0 0 4px 4px;
     box-shadow: 3px 3px 2px #a4a4a4;
 }
+
 .reservation-button__submit:hover {
     background-color: #fff;
     color: #0538ff;
     cursor: pointer;
 }
+
 .alert {
     background-color: #fff;
     height: 80vh;
-    /* height: 400px; */
-    /* margin-top: -30px; */
     position: relative;
     box-shadow: 3px 3px 2px #a4a4a4;
     border-radius: 4px 4px 0 0;
 }
+
 .alert-container {
     padding: 100px 4% 0;
     text-align: center;
 }
+
 .alert__content-text {
     font-size: 20px;
 }
+
 .alert__content-item {
     margin-top: 60px;
 }
+
 .alert__content-item-link {
     text-decoration: none;
     background-color: #305dff;
@@ -131,6 +153,7 @@
     color: #fff;
     z-index: 1;
 }
+
 .form__error {
     color: #ff0000;
 }
@@ -156,6 +179,7 @@
         color: #ff0000;
     }
 }
+
 @media screen and (max-width: 480px) {
     .reservation__select-date {
         width: 100%;

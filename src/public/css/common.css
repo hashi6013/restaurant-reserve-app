@@ -39,6 +39,7 @@ p {
     border-radius: 4px;
     z-index: 5;
 }
+
 .hamburger span,
 .hamburger span::after,
 .hamburger span::before {
@@ -50,9 +51,11 @@ p {
     background-color: #fff;
     position: absolute;
 }
+
 .hamburger span {
     left: 6px;
 }
+
 .hamburger span::before {
     top: -8px;
 }
@@ -73,6 +76,7 @@ p {
     bottom: 0;
     transform: rotate(-45deg);
 }
+
 .nav {
     display: block;
     position: fixed;
@@ -84,6 +88,7 @@ p {
     transition: all 0.5s;
     right: -300%;
 }
+
 .nav__list {
     padding-top: 100px;
 }
@@ -94,14 +99,11 @@ p {
     text-align: center;
     width: 120px;
     margin: 30px auto 0;
-
-    /* padding-top: 50px; */
-        font-size: 20px;
-        color: #305dff;
-        /* color: #fff; */
+    font-size: 20px;
+    color: #305dff;
     text-decoration: none;
-        /* padding: 20px 0 20px 50px; */
 }
+
 .nav.open {
     right: 0;
 }
