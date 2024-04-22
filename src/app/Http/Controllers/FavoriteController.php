@@ -23,7 +23,6 @@ class FavoriteController extends Controller
     {
         $favorite = Favorite::where('restaurant_id', $id)->where('user_id', Auth::id())->first();
         $favorite->delete();
-
         return redirect()->back();
     }
 }

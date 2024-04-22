@@ -38,21 +38,18 @@
         </div>
     </header>
 
-
-
     <main>
         @yield('content')
         <script src="https://kit.fontawesome.com/281a1830c2.js" crossorigin="anonymous"></script>
     </main>
 <script>
 {
-  const hamburger = document.querySelector('.hamburger');
-  const nav = document.querySelector('.nav');
-  hamburger.addEventListener('click', function() {
-   //処理内容
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    hamburger.addEventListener('click', function() {
     hamburger.classList.toggle("open");
     nav.classList.toggle('open');
-  });
+    });
 }
 </script>
 

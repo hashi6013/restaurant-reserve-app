@@ -4,6 +4,7 @@
     align-items: center;
     height: 400px;
 }
+
 .thanks__content-container {
     background-color: #fff;
     width: 450px;
@@ -11,16 +12,20 @@
     box-shadow: 3px 3px 2px #a4a4a4;
     border-radius: 4px;
 }
+
 .thanks__heading {
     text-align: center;
     margin-top: 70px;
 }
+
 .thanks__heading-title {
     font-weight: bold;
 }
+
 .thanks__link {
     margin-top: 50px;
 }
+
 .thanks__link-item {
     padding: 7px 20px;
     border: none;

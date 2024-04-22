@@ -72,7 +72,6 @@
                         <i class="fa-solid fa-heart"></i>
                     </a>
                     @endif
-                    
                     @endif
                 </div>
             </div>
@@ -80,9 +79,6 @@
         @endforeach
     </div>
 </div>
-
-
-
 @endsection
 
 
