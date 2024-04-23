@@ -21,41 +21,44 @@
                         <dd class="review-list__description review-list__rate">
                             <p class="review-list__rate-text">Excellent</p>
                             <input type="hidden" name="restaurant_id" value="{{$review['id']}}">
-                            <input class="review-list__rate-input" id="star5" type="radio" name="stars" value="5">
+                            <input class="review-list__rate-input" id="star5" type="radio" name="stars" value="5" @if(old('stars') == "5") checked @endif>
                             <label class="review-list__rate-label" for="star5">
                                 ★
                             </label>
-                            <input class="review-list__rate-input" id="star4" type="radio" name="stars" value="4">
+                            <input class="review-list__rate-input" id="star4" type="radio" name="stars" value="4" @if(old('stars') == "4") checked @endif>
                             <label class="review-list__rate-label" for="star4">
                                 ★
                             </label>
-                            <input class="review-list__rate-input" id="star3" type="radio" name="stars" value="3">
+                            <input class="review-list__rate-input" id="star3" type="radio" name="stars" value="3" @if(old('stars') == "3") checked @endif>
                             <label class="review-list__rate-label" for="star3">
                                 ★
 
                             </label>
-                            <input class="review-list__rate-input" id="star2" type="radio" name="stars" value="2">
+                            <input class="review-list__rate-input" id="star2" type="radio" name="stars" value="2" @if(old('stars') == "2") checked @endif>
                             <label class="review-list__rate-label" for="star2">
                                 ★
                             </label>
-                            <input class="review-list__rate-input" id="star1" type="radio" name="stars" value="1">
+                            <input class="review-list__rate-input" id="star1" type="radio" name="stars" value="1" @if(old('stars') == "1") checked @endif>
                             <label class="review-list__rate-label" for="star1">
                                 ★
                             </label>
-                            <div class="form__error">
-                            <!-- バリデーション -->
-                            </div>
                         </dd>
+                    </div>
+                    <div class="form__error">
+                        @error('stars')
+                        {{ $message }}
+                        @enderror
                     </div>
                     <div class="review-list-layout">
                         <dt class="review-list__term">Comment</dt>
                         <dd class="review-list__description">
-                            <textarea class="review-list__description--textarea" name="comment" id="" cols="30" rows="10" placeholder="コメントを入力してください">
-                            </textarea>
-                            <div class="form__error">
-                            <!-- バリデーション -->
-                            </div>
+                            <textarea class="review-list__description--textarea" name="comment" id="" cols="30" rows="10" placeholder="コメントを入力してください">{{ old('comment')}}</textarea>
                         </dd>
+                    </div>
+                    <div class="form__error">
+                        @error('comment')
+                        {{ $message }}
+                        @enderror
                     </div>
                 </dl>
                 <div class="review-link">
