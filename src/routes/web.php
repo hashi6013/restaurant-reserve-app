@@ -29,4 +29,6 @@ Route::get('/restaurant/unlike/{id}', [FavoriteController::class, 'unlike'])->na
 Route::delete('/mypage/delete', [ReservationController::class, 'destroy']);
 Route::get('/mypage/edit', [ReservationController::class, 'edit']);
 Route::patch('/mypage/edit', [ReservationController::class, 'update']);
+Route::get('/review', [RestaurantController::class, 'list']);
+Route::post('/review/post', [RestaurantController::class, 'review']);
 

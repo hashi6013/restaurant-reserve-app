@@ -37,9 +37,10 @@ class Restaurant extends Model
     public function reservations() {
         return $this->hasMany('App\Models\Reservation');
     }
-    // public function reservation() {
-        // return $this->belongsTo('App\Models\Reservation');
-    // }
+
+    public function reviews() {
+        return $this->hasMany('App\Models\Review');
+    }
 
     public function favorite_by_auth_user()
     {
@@ -54,6 +55,5 @@ class Restaurant extends Model
         }else {
             return false;
         }
-        
     }
 }

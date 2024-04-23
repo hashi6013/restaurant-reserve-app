@@ -8,6 +8,7 @@ use App\Models\Reservation;
 use App\Models\Genre;
 use App\Models\Area;
 use App\Models\Favorite;
+use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
 
 class RestaurantController extends Controller
@@ -56,5 +57,23 @@ class RestaurantController extends Controller
             $query->where('genre_id', '=', $request->genre_id);
         }
         return $query;
+    }
+
+    public function list(Request $request)
+    {
+        $review = Restaurant::find($request->id);
+        $user = Auth::user();
+        return view('review', compact('review', 'user'));
+    }
+
+    public function review(Request $request)
+    {
+        $user = Auth::user();
+        $restaurants = Restaurant::find($request->restaurant_id);
+        $request['user_id'] = $user->id;
+        Review::create($request->only([
+            'stars', 'comment', 'restaurant_id', 'user_id'
+        ]));
+        return view('post');
     }
 }
