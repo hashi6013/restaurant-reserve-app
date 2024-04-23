@@ -15,6 +15,11 @@
                 <h2 class="restaurant-detail__title">
                     {{$detail->restaurant_name}}
                 </h2>
+                @if(Auth::check())
+                <a class="review-item" href="/review?id={{$detail->id}}">
+                    <i class="fa-solid fa-pen-to-square"></i>投稿する
+                </a>
+                @endif
             </div>
             <div class="restaurant-detail__img">
                 <img src="{{ asset('storage/'.$detail->restaurant_image)}}" alt="お店の画像" decoding="async">

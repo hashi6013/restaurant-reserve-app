@@ -1,7 +1,7 @@
 .mypage-container {
     max-width: 1230px;
     margin: 0 auto 10px;
-    padding: 0 70px;
+    padding: 0 40px;
 }
 
 .mypage__name {
@@ -87,10 +87,9 @@
 }
 
 .favorite-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    column-gap: 10px;
-    row-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .card {
