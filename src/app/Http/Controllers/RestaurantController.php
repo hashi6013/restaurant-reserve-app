@@ -10,6 +10,7 @@ use App\Models\Area;
 use App\Models\Favorite;
 use App\Models\Review;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\RestaurantRequest;
 
 class RestaurantController extends Controller
 {
@@ -66,7 +67,7 @@ class RestaurantController extends Controller
         return view('review', compact('review', 'user'));
     }
 
-    public function review(Request $request)
+    public function review(RestaurantRequest $request)
     {
         $user = Auth::user();
         $restaurants = Restaurant::find($request->restaurant_id);

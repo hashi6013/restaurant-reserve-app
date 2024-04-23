@@ -111,6 +111,10 @@ body {
     color: #ff0000;
 }
 
+.form__error {
+    text-align: center;
+    color: #ff0000;
+}
 @media screen and (max-width: 768px) {
     .review__inner {
         width: 90%;
