@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\AuthController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,15 +17,14 @@ use App\Http\Controllers\FavoriteController;
 |
 */
 
-
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('/thanks', [AuthController::class, 'thanks']);
+    Route::get('/mypage', [RestaurantController::class, 'mypage']);
+});
 Route::get('/', [RestaurantController::class, 'index']);
 Route::get('/search', [RestaurantController::class, 'search']);
 Route::get('/detail/{shop_id}', [RestaurantController::class, 'detail']);
 Route::post('/done', [ReservationController::class, 'store']);
-Route::get('/thanks', [AuthController::class, 'thanks']);
-Route::middleware('auth')->group(function () {
-    Route::get('/mypage', [RestaurantController::class, 'mypage']);
-});
 Route::get('/restaurant/favorite/{id}', [FavoriteController::class, 'favorite'])->name('restaurant.favorite');
 Route::get('/restaurant/unlike/{id}', [FavoriteController::class, 'unlike'])->name('restaurant.unlike');
 Route::delete('/mypage/delete', [ReservationController::class, 'destroy']);
