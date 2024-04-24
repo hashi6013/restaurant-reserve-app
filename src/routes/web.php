@@ -33,3 +33,7 @@ Route::patch('/mypage/edit', [ReservationController::class, 'update']);
 Route::get('/review', [RestaurantController::class, 'list']);
 Route::post('/review/post', [RestaurantController::class, 'review']);
 
+
+Route::get('/admin', [RestaurantController::class, 'admin'])->middleware('auth', 'admin');
+
+
