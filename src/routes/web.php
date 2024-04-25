@@ -5,6 +5,7 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::middleware('auth', 'verified')->group(function () {
-    Route::get('/thanks', [AuthController::class, 'thanks']);
+    // Route::get('/thanks', [AuthController::class, 'thanks']);
     Route::get('/mypage', [RestaurantController::class, 'mypage']);
 });
 Route::get('/', [RestaurantController::class, 'index']);
@@ -33,7 +34,10 @@ Route::patch('/mypage/edit', [ReservationController::class, 'update']);
 Route::get('/review', [RestaurantController::class, 'list']);
 Route::post('/review/post', [RestaurantController::class, 'review']);
 
-
-Route::get('/admin', [RestaurantController::class, 'admin'])->middleware('auth', 'admin');
+Route::middleware('auth', 'admin')->group (function () {
+    Route::get('/admin/home', [AdminController::class, 'admin']);
+    Route::post('/admin/confirm', [AdminController::class, 'confirm']);
+});
+// Route::get('/admin/home', [AdminController::class, 'admin'])->middleware('auth', 'admin');
 
 
