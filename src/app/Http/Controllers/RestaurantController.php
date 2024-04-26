@@ -78,8 +78,5 @@ class RestaurantController extends Controller
         return view('post');
     }
 
-    public function admin()
-    {
-        return view('admin');
-    }
+    
 }

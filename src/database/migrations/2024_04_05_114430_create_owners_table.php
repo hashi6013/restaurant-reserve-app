@@ -15,9 +15,11 @@ class CreateOwnersTable extends Migration
     {
         Schema::create('owners', function (Blueprint $table) {
             $table->id();
-            $table->string('owner_name');
-            $table->string('owner_email')->unique();
-            $table->string('owner_password');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
         });
