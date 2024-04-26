@@ -19,7 +19,6 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::middleware('auth', 'verified')->group(function () {
-    // Route::get('/thanks', [AuthController::class, 'thanks']);
     Route::get('/mypage', [RestaurantController::class, 'mypage']);
 });
 Route::get('/', [RestaurantController::class, 'index']);
@@ -38,6 +37,6 @@ Route::middleware('auth', 'admin')->group (function () {
     Route::get('/admin/home', [AdminController::class, 'admin']);
     Route::post('/admin/confirm', [AdminController::class, 'confirm']);
 });
-// Route::get('/admin/home', [AdminController::class, 'admin'])->middleware('auth', 'admin');
+
 
 

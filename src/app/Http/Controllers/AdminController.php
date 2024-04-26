@@ -15,7 +15,7 @@ class AdminController extends Controller
         $request['role'] = "owner";
         $request['email_verified_at'] = now();
         $request['password'] = bcrypt($request['password']);
-        $owner = $request->only(['name', 'email', 'password', 'role', 'email_verified_at']);
+        $owner = $request->only(['name', 'email', 'password']);
         return $owner;
         // return view('admin.confirm');
     }
