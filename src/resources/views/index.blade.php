@@ -38,7 +38,6 @@
 @endsection
 
 @section('content')
-
 <div class="cards">
     <div class="cards-container">
         @foreach($restaurants as $restaurant)

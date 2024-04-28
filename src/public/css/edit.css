@@ -85,10 +85,11 @@ body {
     color: #ff0000;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .edit__inner {
         width: 90%;
     }
+
     .form__error {
         font-size: clamp(10px, 1.3vw, 20px);
     }
@@ -98,25 +99,30 @@ body {
     .reservation__list-layout:not(:first-of-type) {
         display: block;
     }
+
     .reservation__list-term {
         width: 100%;
     }
+
     .reservation__list-description {
         margin: 0 auto;
         width: 100%;
     }
+
     .reservation__list-input {
         width: 100%;
     }
+
     .reservation__list-select {
         width: 100%;
     }
+
     .edit-link__item {
         margin: 0 auto;
     }
+
     .edit-link__layout:not(:first-of-type) {
         margin-top: 10px;
         margin-bottom: 10px;
     }
 }
-
